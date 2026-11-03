@@ -39,6 +39,11 @@ export type {
 
 // ── Hook ──
 
+/** Tabs a new selection leaves in place: Variables binds to it, AI chats about it. */
+function keepsTabOnSelect(tab: string | null | undefined): boolean {
+  return tab === "variables" || tab === "ai";
+}
+
 export function useDomSelection({
   projectId,
   activeCompPath,
@@ -137,7 +142,7 @@ export function useDomSelection({
       if (isRepeatedSingleSelection) {
         if (options?.revealPanel !== false) {
           setRightCollapsed(false);
-          if (rightPanelTabRef.current !== "variables") setRightPanelTab("design");
+          if (!keepsTabOnSelect(rightPanelTabRef.current)) setRightPanelTab("design");
         }
         return;
       }
@@ -185,7 +190,8 @@ export function useDomSelection({
           setRightCollapsed(false);
           // Keep the Variables tab in place — selecting elements is part of the bind
           // flow there; yanking to Design would lose the context.
-          if (rightPanelTabRef.current !== "variables") {
+          // The AI tab stays too: selecting is how a person points the chat at an element.
+          if (!keepsTabOnSelect(rightPanelTabRef.current)) {
             setRightPanelTab("design");
           }
         }

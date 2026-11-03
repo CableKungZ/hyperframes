@@ -112,7 +112,7 @@ const DEFAULT_OPEN = PANEL_IDS.filter((id) => id !== "slideshow");
 const DEFAULT_VISIBLE = ["preview", "timeline", "compositions", "design"];
 
 describe("Dock on React 19", () => {
-  it("mounts the default layout's ten panels, showing only each group's active tab", () => {
+  it("mounts the default layout's eleven panels, showing only each group's active tab", () => {
     const host = mount("p1");
     for (const id of DEFAULT_VISIBLE) {
       expect(host.querySelector(`[data-testid="content-${id}"]`)).not.toBeNull();

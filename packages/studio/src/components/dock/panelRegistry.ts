@@ -13,6 +13,7 @@ export const PANEL_IDS = [
   "variables",
   "slideshow",
   "motionBlur",
+  "ai",
 ] as const;
 
 export type PanelId = (typeof PANEL_IDS)[number];
@@ -62,6 +63,7 @@ export const PANEL_DEFINITIONS = {
     zone: "right",
     reopen: { near: "design", direction: "within" },
   },
+  ai: { title: "AI", zone: "right", reopen: { near: "design", direction: "within" } },
 } as const satisfies Record<PanelId, PanelDefinition>;
 
 export function isPanelId(value: unknown): value is PanelId {

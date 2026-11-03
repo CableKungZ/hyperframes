@@ -9,6 +9,7 @@ import { RenderQueuePanel } from "./renders/RenderQueuePanel";
 import { SlideshowPanel } from "./panels/SlideshowPanel";
 import { VariablesPanel } from "./panels/VariablesPanel";
 import { MotionBlurPanel } from "./panels/MotionBlurPanel";
+import { AiChatPanel } from "./panels/AiChatPanel";
 import { Dock } from "./dock/Dock";
 import { useDockLayoutStore } from "./dock/dockLayoutStore";
 import type { RenderJob } from "./renders/useRenderQueue";
@@ -283,6 +284,9 @@ export const StudioRightPanels = memo(function StudioRightPanels({
 
   return (
     <>
+      <Dock.Panel id="ai">
+        <AiChatPanel />
+      </Dock.Panel>
       <Dock.Panel id="design">{designBody}</Dock.Panel>
       <Dock.Panel id="layers">
         <LayersPanel />

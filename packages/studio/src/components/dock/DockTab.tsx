@@ -9,6 +9,7 @@ import {
   Layout,
   Monitor,
   Presentation,
+  Sparkle,
   SlidersHorizontal,
   SquaresFour,
   Stack,
@@ -31,6 +32,7 @@ const TAB_ICONS: Record<PanelId, Icon> = {
   variables: BracketsCurly,
   slideshow: Presentation,
   motionBlur: Aperture,
+  ai: Sparkle,
 };
 
 /**

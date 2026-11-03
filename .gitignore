@@ -201,3 +201,6 @@ chrome/
 # Python bytecode from running skill scripts
 __pycache__/
 *.pyc
+
+# HyperFrames Studio Windows launcher build stamp
+.hyperframes-launcher-build
