@@ -55,3 +55,7 @@ registry/**/*.html linguist-vendored
 examples/docs-reference-project/**/*.wav filter=lfs diff=lfs merge=lfs -text
 
 packages/cli/src/cloud/_gen/** linguist-generated=true
+
+# Windows launcher scripts need CRLF on checkout
+*.bat text eol=crlf
+*.ps1 text eol=crlf
